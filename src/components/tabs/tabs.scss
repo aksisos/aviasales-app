@@ -1,0 +1,15 @@
+.ant-radio-button-wrapper {
+	font-size: 12px;
+	width: 251px;
+	text-align: center;
+	height: 50px !important;
+	padding: 9px 0 !important;
+	margin-bottom: 20px !important;
+	&:last-child {
+		border-radius: 0  10px 10px 0 !important;
+	}
+	&:first-child {
+		border-radius:  10px 0 0  10px !important;
+	}
+	
+}

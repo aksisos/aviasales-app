@@ -1,0 +1,22 @@
+.filter_block {
+    width: 232px;
+    height: 252px;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+padding: 20px;
+margin-right: 20px;
+& div:first-child {
+    margin-bottom: 17px !important;
+}
+}
+
+.checkbox_wrapper {
+    display: flex !important;
+    flex-direction: column;
+    & label {
+        margin-top: 17px;
+    }
+}
