@@ -1,3 +1,5 @@
+import { apiUrl } from '../config';
+
 export const check = (payload) => ({ type: 'CHECK', payload });
 
 export const checkAll = (payload) => ({type: 'CHECK_ALL', payload});
@@ -17,7 +19,7 @@ export const errorCatch = () => ({type: 'ERROR_CATCH'});
 
 export const fetchOtherTickets = async (dispatch, id) => {
   dispatch(loadingStart());
-  await fetch(`https://aviasales-test-api.kata.academy/tickets?searchId=${id}`)
+  await fetch(`${apiUrl}tickets?searchId=${id}`)
     .then((res) => res.json())
     .then((res) => {
       dispatch(setTicketArray(res));
@@ -39,7 +41,7 @@ export const fetchOtherTickets = async (dispatch, id) => {
 };
 
 export const fetchTickets = () => async (dispatch) => {
-  await fetch('https://aviasales-test-api.kata.academy/search')
+  await fetch(`${apiUrl}search`)
     .then((res) => res.json())
     .then(async (res) => {
       await fetchOtherTickets(dispatch, res.searchId);

@@ -1,5 +1,3 @@
-/* eslint-disable no-nested-ternary */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import {format, parse} from 'date-fns';
 
@@ -30,6 +28,16 @@ const Ticket = function Ticket({
     };
   }; 
 
+  const FlexibleEndings = (length) => {
+    if (length === 1) {
+      return 'ка';
+    } else if (length === 0) {
+      return 'ок';
+    } else {
+      return 'ки';
+    }
+  };
+
   return (
     <li className={classes.card}>
       <div className={classes.flex_wrapper}>
@@ -45,11 +53,7 @@ const Ticket = function Ticket({
         </div>
         <div className={classes.grid_item}>
           <div className={classes.route}>{to.stops.length} пересад
-            {to.stops.length === 1
-              ? 'ка'
-              : to.stops.length === 0
-                ? 'ок'
-                : 'ки'}</div>
+            { FlexibleEndings(to.stops.length) }</div>
           <div className={classes.time}>{stopsTo}</div>
         </div>
         <div className={classes.grid_item}>
@@ -62,11 +66,7 @@ const Ticket = function Ticket({
         </div>
         <div className={classes.grid_item}>
           <div className={classes.route}>{from.stops.length} пересад
-            {from.stops.length === 1
-              ? 'ка'
-              : from.stops.length === 0
-                ? 'ок'
-                : 'ки'}</div>
+            { FlexibleEndings(from.stops.length) }</div>
           <div className={classes.time}>{stopsFrom}</div>
         </div>
       </div>

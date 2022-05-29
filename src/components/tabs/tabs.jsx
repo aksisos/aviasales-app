@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
-import * as actions from '../../actions';
+import * as actions from '../../redux/actions';
 
 const Tabs = function Tabs ( { isCheapest, sortToggle, fetchTickets }) {
   const options = [

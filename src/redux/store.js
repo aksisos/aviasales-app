@@ -1,7 +1,7 @@
 import { applyMiddleware, createStore, compose } from 'redux';
 import reduxThunk from 'redux-thunk';
 
-import reducer from './reducers/reducer';
+import reducer from '../reducers/reducer';
 
 const composeEnhancers =
   typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
